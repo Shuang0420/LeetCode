@@ -26,6 +26,7 @@ public class Solution {
             l1 = l1.next;
             l2 = l2.next;
         }
+        // if two numbers have different digits
         ListNode n = (l1 != null ? l1 : l2);
         while (n != null) {
             sum = n.val + carry;
@@ -37,6 +38,7 @@ public class Solution {
             n = n.next;
             
         }
+        // if there's another carry
         if (carry != 0) {
             p.next = new ListNode(carry);
         }

@@ -29,4 +29,4 @@ You are given two linked lists representing two non-negative numbers. The digits
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton">[(M) Multiply Strings](/problems/multiply-strings/) [(E) Add Binary](/problems/add-binary/)</span></div>
+<span class="hidebutton">[(M) Multiply Strings](/problems/multiply-strings/) [(E) Add Binary](/problems/add-binary/) [(E) Sum of Two Integers](/problems/sum-of-two-integers/)</span></div>

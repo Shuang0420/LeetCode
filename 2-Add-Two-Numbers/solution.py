@@ -16,10 +16,10 @@ class Solution(object):
         carry = 0
         while True:
             if l1 != None:
-                carry = l1.val + carry
+                carry += l1.val
                 l1 = l1.next
             if l2 != None:
-                carry = l2.val + carry
+                carry += l2.val
                 l2 = l2.next
             output.val = carry % 10
             carry = carry / 10

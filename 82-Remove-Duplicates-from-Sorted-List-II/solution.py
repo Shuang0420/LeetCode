@@ -18,8 +18,9 @@ class Solution(object):
                 if not head.next or head.val != head.next.val:
                     break
             else:
-                prev.next,prev = head,head
+                prev.next = head
+                prev = head
             head = head.next
-            prev.next = None
+        prev.next = None
         return dummy.next
         

@@ -14,7 +14,7 @@ class Solution(object):
         prev = dummy
         while head:
             while head.next and head.val == head.next.val:
-                head.next = head.next.next
+                head = head.next
                 if not head.next or head.val != head.next.val:
                     break
             else:

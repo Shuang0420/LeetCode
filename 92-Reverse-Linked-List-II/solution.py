@@ -12,24 +12,28 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
-        if m == n:
+        if m==n:
             return head
-
-        dummyNode = ListNode(0)
-        dummyNode.next = head
-        pre = dummyNode
-
-        for i in range(m - 1):
-            pre = pre.next
+            
+        # [1,m-1] nodes
+        oup = ListNode(0)
+        oup.next = head
+        dummy = oup
         
-        # reverse the [m, n] nodes
+        for i in range(m-1):
+            dummy = dummy.next
+            
+        # reverse [m,n] nodes
         reverse = None
-        cur = pre.next
-        for i in range(n - m + 1):
-            cur.next,reverse,cur=reverse,cur,cur.next
-
-        pre.next.next = cur
-        pre.next = reverse
-
-        return dummyNode.next
+        cur = dummy.next
+        for i in range(m,n+1):
+            cur.next,reverse,cur = reverse,cur,cur.next
+        
+        # [n,end] nodes
+        dummy.next.next = cur
+        dummy.next = reverse
+        
+        return oup.next
+                
+        
         

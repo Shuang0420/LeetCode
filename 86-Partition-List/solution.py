@@ -5,22 +5,18 @@
 #         self.next = None
 
 class Solution(object):
-    def partition(self, head, x):
-        """
-        :type head: ListNode
-        :type x: int
-        :rtype: ListNode
-        """
-        left,right = ListNode(None),ListNode(None)
-        left_cur,right_cur = left,right
+    def partition(self,head,x):
+        left,right = ListNode(0),ListNode(0)
+        left_cur,right_cur=left,right
         while head:
-            if head.val < x:
+            if head.val<x:
                 left_cur.next,head=head,head.next
-                left_cur,left_cur.next = left_cur.next,None
+                left_cur=left_cur.next
             else:
                 right_cur.next,head=head,head.next
-                right_cur,right_cur.next = right_cur.next,None
+                right_cur=right_cur.next
         left_cur.next=right.next
+        right_cur.next=None
         return left.next
         
         

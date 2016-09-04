@@ -5,17 +5,14 @@
 #         self.next = None
 
 class Solution(object):
-    def deleteDuplicates(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+    def deleteDuplicates(self,head):
         dummy = ListNode(0)
+        dummy.next = head
         cur = dummy
         while head:
-            while head.next and head.val == head.next.val:
-                head = head.next
-                if not head.next or head.val != head.next.val:
+            while head.next and head.next.val == head.val:
+                head.next = head.next.next
+                if not head.next or head.next.val != head.val:
                     break
             else:
                 cur.next = head

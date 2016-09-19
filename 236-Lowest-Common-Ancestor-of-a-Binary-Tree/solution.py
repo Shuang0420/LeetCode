@@ -13,6 +13,8 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
+        # the ancestor has a node (p or q) on its left and a node (p or q) on its right;
+        # or the ancestor is p or q and has another node on its left or right
         if not root or root==p or root==q:
             return root
         left = self.lowestCommonAncestor(root.left,p,q)

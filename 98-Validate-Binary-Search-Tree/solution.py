@@ -13,17 +13,12 @@ class Solution(object):
         """
         if not root:
             return True
-        list = self.getList(root)
-        max = float('inf')
-        while list:
-            node = list.pop()
-            if node >= max:
-                return False
-            max = node
-        return True
-        
-    def getList(self, root):
+        return self.helper(root, float('-inf'), float('inf'))
+
+    def helper(self, root, min, max):
         if not root:
-            return []
-        return self.getList(root.left)+[root.val]+self.getList(root.right)
+            return True
+        if root.val >= max or root.val <= min:
+            return False
+        return self.helper(root.left, min, root.val) and self.helper(root.right, root.val, max)
         

@@ -19,7 +19,4 @@ class Solution(object):
                 end = mid
             else:
                 start = mid
-        if isBadVersion(start):
-            return start
-        else:
-            return end
+        return start if isBadVersion(start) else end

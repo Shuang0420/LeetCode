@@ -1,30 +1,76 @@
-'''
-recurse down
-helper(node.left, global_max, node.val)
-helper(node.right, global_max, node.val)
-
-return up
-max (curr_lengh, left_max_length, right_max_length)
-
-current level
-global_max = node.val == lastVal + 1 : length + 1 : 1
-'''
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+'''
+Three rules:
+
+root's right node becomes the left node of the left node of root
+root becomes the right node of root's left node
+above rules apply on the left edge and return left node along the path.
+'''
+
+
+'''
+newroot.right --> root.left.left
+newroot --> root.left.right
+newroot.left --> root.left.right
+'''
+
+class TreeNode(object):
+
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 
 class Solution(object):
-    def longestConsecutive(self, root):
+
+    def upsideDownBinaryTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
         if not root:
-            return 0
+            return root
 
-        return self.helper(root, 1, float('inf'))
+        stack = []
+        # store the path
+        while root:
+            stack.append(root)
+            root = root.left
 
-    def helper(self, node, global_max, lastVal):
-        if not node:
-            return global_max
-        global_max = global_max + 1 if node.val == lastVal + 1 else 1
-        return max(global_max, self.helper(node.left, global_max, node.val), self.helper(node.right, global_max, node.val))
+
+        newRoot = stack.pop()
+        head = newRoot
+        while stack:
+            parent = stack.pop()
+            head.left = parent.right # parent
+            head.right = parent
+
+            head = parent
+            parent.left = None
+            parent.right = None
+
+        return newRoot
+
+
+
+class Solution(object):
+    def upsideDownBinaryTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
+        # stop case
+        if not root or not root.left:
+            return root
+        # assume all lower levels are handled
+        newRoot = self.upsideDownBinaryTree(root.left)
+
+        # handle current level
+        root.left.left = root.right
+        root.left.right = root
+
+        root.left = None
+        root.right = None
+
+        return newRoot

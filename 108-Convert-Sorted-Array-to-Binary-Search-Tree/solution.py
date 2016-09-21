@@ -4,7 +4,25 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
-
+'''
+recursive down: 
+  pass the array, and two pointers (start, end) down
+  for the left child, use mid-1 as end
+  for the right child, use mid+1 as start
+return up: 
+  return the root of subtree
+current level: 
+  build the subtree
+  mid=left+(right-left)/2
+  root=TreeNode(nums[mid])
+  root.left=helper(nums,start,mid-1)
+  root.right=helper(nums,mid+1,end)
+base case:
+  if start>end:
+    return None
+  if start==end:
+    return TreeNode(start)
+'''
 class Solution(object):
     def sortedArrayToBST(self, nums):
         """
@@ -13,19 +31,17 @@ class Solution(object):
         """
         if not nums:
             return None
-        root = TreeNode(nums[0])
-        return self.helper(nums,root,0,len(nums)-1)
+        return self.helper(nums,0,len(nums)-1)
         
-    def helper(self,nums,root, start,end):
-        if start > end:
-            return root
-            
-        if start == end:
+    def helper(self, nums, start, end):
+        if start>end:
+            return None
+        if start==end:
             return TreeNode(nums[start])
-        
-        mid = start + (end - start)/2
-        root = TreeNode(nums[mid])
-        root.left = self.helper(nums,root.left, start, mid-1)
-        root.right = self.helper(nums,root.right, mid+1, end)
-        
+        mid=start+(end-start)/2
+        root=TreeNode(nums[mid])
+        root.left=self.helper(nums,start,mid-1)
+        root.right=self.helper(nums,mid+1,end)
         return root
+       
+

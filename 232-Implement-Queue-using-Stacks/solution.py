@@ -25,9 +25,7 @@ class Queue(object):
         :rtype: int
         """
         self.helper()
-        element=self.stack2.pop()
-        self.stack2.append(element)
-        return element
+        return self.stack2[-1]
     
     def empty(self):
         """

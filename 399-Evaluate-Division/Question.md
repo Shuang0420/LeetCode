@@ -21,9 +21,9 @@ The input is always valid. You may assume that evaluating the queries will resul
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-</div>
+<span class="hidebutton">[Google](/company/google/)</span></div>
 
 <div>
 

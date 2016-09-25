@@ -1,3 +1,11 @@
+'''
+Attention: 
+The dictionary given may contain duplicate words, but should append to self.dictionary only once, otherwise the output may be wrong. Given the example case "['a','a'],isUnique('a')", should return True but will return False if without duplication handling.
+
+collections.defaultdict() is such a useful function. Default parameter is None and can be list, set, int and so on, but cannot be dict.
+
+set doesn't support index, so should convert set into list first.
+'''
 import collections
 class ValidWordAbbr(object):
     def __init__(self, dictionary):

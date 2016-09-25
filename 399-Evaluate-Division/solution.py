@@ -12,21 +12,16 @@ class Solution(object):
         :type queries: List[List[str]]
         :rtype: List[float]
         """
-        #graph=dict()
         result=[]
         graph = collections.defaultdict(dict)
-        for edge,val in zip(equations,values):
-            # 4 possibilities
-            #graph[edge[0]],graph[edge[1]]=dict(),dict()
-            graph[edge[0]][edge[1]]=val
-            graph[edge[0]][edge[0]]=1.0
-            graph[edge[1]][edge[0]]=1.0/val
-            graph[edge[1]][edge[1]]=1.0
+        for (d0,d1),val in zip(equations,values):
+            graph[d0][d1]=val
+            graph[d0][d0]=1.0
+            graph[d1][d0]=1.0/val
+            graph[d1][d1]=1.0
 
         print graph   
         for q in queries:
-            print '======================='+','.join(q)+"="*10
-            print 'Result ',self.helper_dfs(graph,q[0],q[1],[])
             result.append(self.helper_dfs(graph,q[0],q[1],[]))
         
         return result
@@ -44,4 +39,7 @@ class Solution(object):
                 if next_val!=-1:
                     return graph[start][node]*next_val
         return -1.0
+        
+        
+
         

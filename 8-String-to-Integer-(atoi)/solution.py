@@ -6,8 +6,9 @@ class Solution(object):
         """
         if not str:
             return 0
-        sum,sign=0,1
-        i=0
+            
+        num,sign=0,1
+        i=0 # start index
         maxint=(1<<31)-1
         str=str.strip()
         if str[0]=='+':
@@ -16,7 +17,6 @@ class Solution(object):
             sign=-1
             i=1
         
-        num=0
         for s in range(i,len(str)):
             if str[s] < '0' or str[s] > '9':
                 break

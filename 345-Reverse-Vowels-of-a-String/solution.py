@@ -6,8 +6,8 @@ class Solution(object):
         """
         if not s:
             return s
-        chars=list(s)
-        vowels=['a','e','i','o','u','A','E','I','O','U']
+        chars=[ord(i) for i in s]
+        vowels=[ord(i) for i in ['a','e','i','o','u','A','E','I','O','U']]
         left,right=0,len(s)-1
         while left+1<=right:
             if chars[left] in vowels and chars[right] in vowels:
@@ -19,4 +19,4 @@ class Solution(object):
                 left+=1
             if chars[right] not in vowels:
                 right-=1
-        return ''.join(chars)
+        return ''.join(chr(i) for i in chars)

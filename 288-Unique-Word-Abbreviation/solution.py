@@ -1,4 +1,6 @@
 '''
+Logic is quite simple, use a dict(), the key is abbreviations and value is a list of all words with the same abbreviations. Check if the abbreviation of incoming word is in the dict() and the only value of such key is the word itself.
+
 Attention: 
 The dictionary given may contain duplicate words, but should append to self.dictionary only once, otherwise the output may be wrong. Given the example case "['a','a'],isUnique('a')", should return True but will return False if without duplication handling.
 

@@ -11,6 +11,7 @@ class Solution(object):
         i=0 # start index
         maxint=(1<<31)-1
         str=str.strip()
+        
         if str[0]=='+':
             i=1
         if str[0]=='-':

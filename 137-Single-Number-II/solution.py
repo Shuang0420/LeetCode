@@ -4,8 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        if not nums:
-            return nums
+        
         nums=sorted(nums)
         for i in range(1,len(nums),3):
             if nums[i]!=nums[i-1] or nums[i]!=nums[i+1]:

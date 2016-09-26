@@ -18,12 +18,6 @@ Special thanks to [@jianchao.li.fighter](https://leetcode.com/discuss/user/jianc
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Bit Manipulation](/tag/bit-manipulation/)</span></div>

@@ -20,12 +20,6 @@ return `[3,2,1]`.
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Tree](/tag/tree/) [Stack](/tag/stack/)</span></div>

@@ -6,12 +6,6 @@ Given an array where elements are sorted in ascending order, convert it to a hei
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
 <span class="hidebutton">[Airbnb](/company/airbnb/)</span></div>

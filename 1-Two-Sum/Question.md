@@ -19,15 +19,9 @@ The return format had been changed to **zero-based** indices. Please read the ab
 
 <div>
 
-[Subscribe](/subscribe/) to see which companies asked this question
-
-</div>
-
-<div>
-
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[Adobe](/company/adobe/) [Airbnb](/company/airbnb/) [Amazon](/company/amazon/) [Apple](/company/apple/) [Bloomberg](/company/bloomberg/) [Dropbox](/company/dropbox/) [Facebook](/company/facebook/) [LinkedIn](/company/linkedin/) [Microsoft](/company/microsoft/) [Uber](/company/uber/) [Yahoo](/company/yahoo/) [Yelp](/company/yelp/)</span></div>
+<span class="hidebutton">[LinkedIn](/company/linkedin/) [Uber](/company/uber/) [Airbnb](/company/airbnb/) [Facebook](/company/facebook/) [Amazon](/company/amazon/) [Microsoft](/company/microsoft/) [Apple](/company/apple/) [Yahoo](/company/yahoo/) [Dropbox](/company/dropbox/) [Bloomberg](/company/bloomberg/) [Yelp](/company/yelp/) [Adobe](/company/adobe/)</span></div>
 
 <div>
 

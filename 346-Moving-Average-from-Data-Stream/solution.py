@@ -1,3 +1,10 @@
+'''
+Solution:
+- maintain a deque of at most 'size' length, for each next call, enque the number, calculate average, check if the length of deque is 3, if it is, popleft, and finally return the average. Time complexity O(n); Space complexity O(size)
+'''
+
+
+
 from collections import deque
 class MovingAverage(object):
 

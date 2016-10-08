@@ -11,6 +11,8 @@ In Python 2 dict.keys() creates the whole list of keys first that's why it is an
 1000 loops, best of 3: 402 us per loop
 >>> %timeit 10000 in dic.viewkeys()
 1000000 loops, best of 3: 457 ns per loop
+
+self.hashmap[number]=self.hashmap.get(number,0)+1
 '''
 class TwoSum(object):
 
@@ -25,11 +27,13 @@ class TwoSum(object):
         Add the number to an internal data structure.
         :rtype: nothing
         """
+        '''
         if self.hashmap.has_key(number):
             self.hashmap[number]+=1
         else:
             self.hashmap[number]=1
-        # self.hashmap[number]=self.hashmap.get(number,0)+1
+        '''
+        self.hashmap[number]=self.hashmap.get(number,0)+1
 
     def find(self, value):
         """

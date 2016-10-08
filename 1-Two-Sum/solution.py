@@ -33,7 +33,7 @@ class Solution(object):
             return None
         hashmap=dict()
         for index,value in enumerate(nums):
-            if hashmap.has_key(target-value):
+            if target-value in hashmap:
                 return[index,hashmap[target-value]]
             hashmap[value]=index
         return None

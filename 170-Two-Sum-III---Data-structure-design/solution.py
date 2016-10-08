@@ -1,5 +1,18 @@
 '''
-About hashmap:
+Data structure:
+- hashmap<number,frequency>.   Use hashmap because duplicates matter!
+
+Corner case:
+- hashmap is None
+
+Attention:
+- avoid case val==target-val
+
+Time complexity:
+- add() O(1)
+- find() O(n)
+
+About python dictionary:
 - Do not use dict.keys! 
 In Python 2 dict.keys() creates the whole list of keys first that's why it is an O(N) operation, while key in dict is an O(1) operation.
 >>> dic = dict.fromkeys(range(10**5))
@@ -12,6 +25,7 @@ In Python 2 dict.keys() creates the whole list of keys first that's why it is an
 >>> %timeit 10000 in dic.viewkeys()
 1000000 loops, best of 3: 457 ns per loop
 
+- Use dict.get(key,default=None)!
 self.hashmap[number]=self.hashmap.get(number,0)+1
 '''
 class TwoSum(object):

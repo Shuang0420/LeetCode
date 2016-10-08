@@ -5,7 +5,7 @@ Solution:
 - subarray with different states, Time complexity: O(n)
 
 Attention:
-- for solution 3, boundary(pointer is not included)
+- for solution 3, boundary is tricky, remember pointer is not included
 '''
 class Solution(object):
     def sortColors(self, nums):
@@ -13,17 +13,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        if len(nums)<1:
+        if len(nums)<=1:
             return
-        start,end,cur=0,len(nums)-1,0
-        while cur<=end:
+        left,right,cur=0,len(nums)-1,0
+        while cur<=right:
             if nums[cur]==0:
-                nums[cur],nums[start]=nums[start],nums[cur]
-                start+=1
+                nums[cur],nums[left]=nums[left],nums[cur]
+                left+=1
                 cur+=1
             elif nums[cur]==2:
-                nums[cur],nums[end]=nums[end],nums[cur]
-                end-=1
+                nums[cur],nums[right]=nums[right],nums[cur]
+                right-=1
             else:
                 cur+=1
             

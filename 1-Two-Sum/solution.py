@@ -3,6 +3,7 @@ Check assumption:
 - array is not sorted
 - each input would have exactly one solution
 - duplicates in array
+- return index is not sorted
 
 Corner case:
 - len(nums)<2 or nums==None
@@ -16,7 +17,7 @@ Attention:
 
 Optimization:
 - While loop, use hashmap<target-nums[i],i> to store remaining index and value, so that the second loop will have O(1) time complexity, and the total complexity would be O(n). The cost is space complexity. This is two-pass solution.
-- Two-pass --> One pass. While loop, for each i, check if it is in hashmap, if not, add it, if exists, return index.
+- Two-pass --> One pass. While loop, for each i, check if it is in hashmap, if not, add it to the hashmap, if exists, return index.
 '''
 
 class Solution(object):
@@ -34,8 +35,7 @@ class Solution(object):
         for index,value in enumerate(nums):
             if hashmap.has_key(target-value):
                 return[index,hashmap[target-value]]
-            else:
-                hashmap[value]=index
+            hashmap[value]=index
         return None
     
     

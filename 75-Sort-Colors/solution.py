@@ -6,6 +6,10 @@ Solution:
 
 Attention:
 - for solution 3, boundary is tricky, remember pointer is not included
+
+Test case:
+- [0]
+- [0,0,0]
 '''
 class Solution(object):
     def sortColors(self, nums):

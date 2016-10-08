@@ -1,6 +1,9 @@
 '''
 Solution:
 - maintain a deque of at most 'size' length, for each next call, enque the number, calculate average, check if the length of deque is 3, if it is, popleft, and finally return the average. Time complexity O(n); Space complexity O(size)
+
+Follow-up:
+- make it O(1), save the sum each time, that is for each next call, enque the number, add to global sum, calculate average, check if the length of deque is 3, if it is, pop left, minus popped number from sum, and finally return the average.
 '''
 
 
@@ -15,6 +18,7 @@ class MovingAverage(object):
         """
         self.q=deque()
         self.size=size
+        self.sum=0
 
     def next(self, val):
         """
@@ -22,9 +26,10 @@ class MovingAverage(object):
         :rtype: float
         """
         self.q.append(val)
-        avg=sum(self.q)/float(len(self.q))
+        self.sum+=val
+        avg=self.sum/float(len(self.q))
         if len(self.q)==self.size:
-            self.q.popleft()
+            self.sum-=self.q.popleft()
         return avg
         
 

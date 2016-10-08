@@ -15,6 +15,29 @@ class Solution(object):
         """
         if len(nums)<1:
             return
+        start,end,cur=0,len(nums)-1,0
+        while cur<=end:
+            if nums[cur]==0:
+                nums[cur],nums[start]=nums[start],nums[cur]
+                start+=1
+                cur+=1
+            elif nums[cur]==2:
+                nums[cur],nums[end]=nums[end],nums[cur]
+                end-=1
+            else:
+                cur+=1
+            
+        
+        
+    '''            
+    # two-pass solution: count and reset            
+    def sortColors(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        if len(nums)<1:
+            return
         a0,a1,a2=0,0,0
         for n in nums:
             if n==0: a0+=1
@@ -30,5 +53,6 @@ class Solution(object):
             elif a2>0:
                 nums[i]=2
                 a2-=1
+    '''
             
                 

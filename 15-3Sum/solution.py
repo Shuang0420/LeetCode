@@ -1,6 +1,7 @@
 '''
 Solution:
-- convert to 2-sum problem
+- convert to 2-sum problem, avoid duplicate triplets: sort the array, move pointers to skip duplicates
+
 '''
 class Solution(object):
     def threeSum(self, nums):

@@ -1,7 +1,7 @@
 '''
 Solution:
 - subarray: 2 pointers: head,tail
-- any repeated work? no   any meaningless work? yes    check the sum-array and we can find that the non-max-sum either subtract one more number or miss one more addition --> cur_sum=max(cur_sum,nums[start]+cur_sum)
+- any repeated work? no   any meaningless work? yes    check the sum-array and we can find that the non-max-sum either subtract one more number or miss one more addition --> cur_sum=max(cur_sum,nums[start]+cur_sum),max_sum=(cur_sum,max_sum)
 
 '''
 class Solution(object):

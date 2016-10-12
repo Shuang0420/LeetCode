@@ -19,7 +19,7 @@ If there are multiple such windows, you are guaranteed that there will always be
 
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[LinkedIn](/company/linkedin/) [Uber](/company/uber/) [Facebook](/company/facebook/)</span></div>
+<span class="hidebutton">[LinkedIn](/company/linkedin/) [Snapchat](/company/snapchat/) [Uber](/company/uber/) [Facebook](/company/facebook/)</span></div>
 
 <div>
 

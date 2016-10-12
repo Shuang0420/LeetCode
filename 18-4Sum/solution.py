@@ -1,29 +1,45 @@
 class Solution(object):
-
     def fourSum(self, nums, target):
-        nums.sort()
-        res = []
-        length = len(nums)
-        for i in range(0, length - 3):
-            if i and nums[i] == nums[i - 1]:
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[List[int]]
+        """
+        if len(nums)<4:
+            return []
+        res=[]
+        nums=sorted(nums)
+        for i in range(len(nums)-3):
+            if i>0 and nums[i]==nums[i-1]:
                 continue
-            for j in range(i + 1, length - 2):
-                if j != i + 1 and nums[j] == nums[j - 1]:
-                    continue
-                sum = target - nums[i] - nums[j]
-                left, right = j + 1, length - 1
-                while left < right:
-                    if nums[left] + nums[right] == sum:
-                        res.append([nums[i], nums[j], nums[left], nums[right]])
-                        right -= 1
-                        left += 1
-                        while left < right and nums[left] == nums[left - 1]:
-                            left += 1
-                        while left < right and nums[right] == nums[right + 1]:
-                            right -= 1
-                    elif nums[left] + nums[right] > sum:
-                        right -= 1
-                    else:
-                        left += 1
+            res+=self.sum_3(nums[i:],target-nums[i])
+        return res
+        
+    def sum_3(self,nums,target):
+        if len(nums)<4:
+            return []
+        res=[]
+        cur=nums[0]
+        nums=nums[1:]
+        for i in range(len(nums)-2):
+            if i>0 and nums[i]==nums[i-1]:
+                continue
+            new_target=target-nums[i]
+            start=i+1
+            end=len(nums)-1
+            while start<end:
+                cur_sum=nums[start]+nums[end]
+                if cur_sum>new_target:
+                    end-=1
+                elif cur_sum<new_target:
+                    start+=1
+                else:
+                    res.append([cur,nums[i],nums[start],nums[end]])
+                    start+=1
+                    end-=1
+                    while start<end and nums[start]==nums[start-1]:
+                        start+=1
+                    while start<end and nums[end]==nums[end+1]:
+                        end-=1
         return res
                 

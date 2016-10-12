@@ -1,3 +1,8 @@
+'''
+Solution:
+- add a length prefix with 8 bit for each string to represent its length.
+'''
+
 class Codec:
 
     def encode(self, strs):

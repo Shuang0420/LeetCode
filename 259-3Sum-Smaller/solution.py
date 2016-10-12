@@ -1,3 +1,9 @@
+'''
+Same with normal 3sum problem, just consider all possibilities.
+
+Solution:
+- sort nums, for nums[i] in nums, search if nums[start]+nums[end]<target-nums[i] for nums[i+1:], if it is, count+=end-start and keep going
+'''
 class Solution(object):
     def threeSumSmaller(self, nums, target):
         """

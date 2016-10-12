@@ -1,3 +1,6 @@
+'''
+Simliar to 3sum problem, but have a global_diff to record current minimum difference (remember it should be absolute value) and global_sum to record current closet result
+'''
 class Solution(object):
     def threeSumClosest(self, nums, target):
         """
